@@ -3,9 +3,11 @@ import ReactDom from "react-dom/client";
 
 export const Greeting = () => {
   return (
-    <h2 id="id" className="class">
-      My React
-    </h2>
+    <>
+      <h2 id="id" className="class">
+        My React
+      </h2>
+    </>
   );
 };
 
