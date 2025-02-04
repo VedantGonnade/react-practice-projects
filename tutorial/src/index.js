@@ -3,33 +3,27 @@ import ReactDom from "react-dom/client";
 
 import "./index.css";
 
-const firstBook = {
-  img: "https://m.media-amazon.com/images/I/71FsIkGF3pL._AC_UY218_.jpg",
-  title: "The Midnight Library",
-  author: "Matt Haig",
-};
-
-const secondBook = {
-  img: "https://m.media-amazon.com/images/I/61aNIVRCtHL._AC_UY218_.jpg",
-  title: "Atomic habits",
-  author: "James clear",
-};
+const books = [
+  {
+    img: "https://m.media-amazon.com/images/I/71FsIkGF3pL._AC_UY218_.jpg",
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    id: 1,
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/61aNIVRCtHL._AC_UY218_.jpg",
+    title: "Atomic habits",
+    author: "James clear",
+    id: 2,
+  },
+];
 
 export const BookList = () => {
   return (
     <section className="booklist">
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        img={firstBook.img}
-      >
-        <button>I am a children</button>
-      </Book>
-      <Book
-        author={secondBook.author}
-        title={secondBook.title}
-        img={secondBook.img}
-      />
+      {books.map(book => {
+        return <Book {...book} key={book.id}></Book>;
+      })}
     </section>
   );
 };
